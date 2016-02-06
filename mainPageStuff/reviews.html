@@ -100,37 +100,153 @@
 </nav>
 </div>
 	<!-- END .header -->
-<div class="dropdown">
-  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    Dropdown
-    <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-    <li><a href="#">Action</a></li>
-    <li><a href="#">Another action</a></li>
-    <li><a href="#">Something else here</a></li>
-    <li role="separator" class="divider"></li>
-    <li><a href="#">Separated link</a></li>
-  </ul>
-</div>
 
-	<footer id="fh5co-footer">
-		
-		<div class="container">
-			<div class="row row-padded">
-				<div class="col-md-12 text-center">
-					<p class="fh5co-social-icons">
-						<a href="#"><i class="icon-twitter"></i></a>
-						<a href="#"><i class="icon-facebook"></i></a>
-						<a href="#"><i class="icon-instagram"></i></a>
-						<a href="#"><i class="icon-dribbble"></i></a>
-						<a href="#"><i class="icon-youtube"></i></a>
-					</p>
-					<p><small>&copy; Hydrogen Free HTML5 Template. All Rights Reserved. <br>Designed by: <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> | Images by: <a href="http://pexels.com" target="_blank">Pexels</a> </small></p>
-				</div>
-			</div>
+	<div class="container">
+	  <h2>Post a Review</h2>
+	  
+	  <!-- REVIEW QUESTIONS -->
+	  <dl id="questions">
+		<dt> 
+					<div class="dropdown">
+					  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						Type of Location
+						<span class="caret"></span>
+					  </button>
+					  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+						<li><a id="hotelthing" href="#" onclick="changeTextH(this)">Hotels</a></li>
+						<li><a id="plane" href="#" onclick="changeTextH(this)">Airports/Planes</a></li>
+						<li><a id="beach" href="#" onclick="changeTextH(this)">Beaches</a></li>
+						<li><a id="resturaunt" href="#" onclick="changeTextH(this)">Restaurant</a></li>
+						<li><a id="church" href="#" onclick="changeTextH(this)">Churches</a></li>
+						<li><a id="uni" href="#" onclick="changeTextH(this)">Schools/University</a></li>
+						<li role="separator" class="divider"></li>
+					  </ul>
+					</div>
+
+		  </dt>
+		<dt class="question">
+			<span id="q1">Are the elevators functional/ easy to get to?</span>
+			<form role="form">
+				<label class="radio-inline">
+				  <input type="radio" name="optradio">Yes
+				</label>
+				<label class="radio-inline">
+				  <input type="radio" name="optradio">No
+				</label>
+			  </form>
+		</dt>
+		<dt class="question">
+			<span id="q2">Is the bed a good height?</span>
+			<form>
+				<label class="radio-inline">
+				  <input type="radio" name="optradio">Yes
+				</label>
+				<label class="radio-inline">
+				  <input type="radio" name="optradio">No
+				</label>
+
+			  </form>
+				
+		</dt>
+		<dt class="question">
+			<span id="q3">Is there a tub?</span>
+			<form>
+				<label class="radio-inline">
+				  <input type="radio" name="optradio">Yes
+				</label>
+				<label class="radio-inline">
+				  <input type="radio" name="optradio">No
+				</label>
+
+			  </form>
+			
+		</dt>
+		<dt class="question">
+			<span id="q4">Are the outlets easily accessible?</span>
+			<form>
+				<label class="radio-inline">
+				  <input type="radio" name="optradio">Yes
+				</label>
+				<label class="radio-inline">
+				  <input type="radio" name="optradio">No
+				</label>
+			  </form>
+		</dt>
+	  </dl>
+		<div class="form-group">
+			<label for="inputlg">Extra Comments</label>
+				<input class="form-control input-lg" id="inputlg" type="text">
+				<input type="submit"> 
+				</input>
 		</div>
-	</footer>
+	</div>
+			
+
+	</div>
+	</div>
+
+	<script>
+		function changeTextH(element){
+			var q1 =document.getElementById("q1");
+			var q2 =document.getElementById("q2");
+			var q3 =document.getElementById("q3");
+			var q4 =document.getElementById("q4");
+			
+			
+			if(element.id == 'hotelthing') {
+				document.getElementById('dropdownMenu1').innerHTML = 'Hotels';
+				
+				q1.innerHTML ="Are the elevators functional/ easy to get to?";
+				q2.innerHTML ="Is the bed a good height? ";
+				q3.innerHTML ="Is there a tub? ";
+				q4.innerHTML ="Are there ramps? ";
+			}
+			else if(element.id == 'plane'){
+				document.getElementById('dropdownMenu1').innerHTML = 'Airports/Planes';
+				
+				q1.innerHTML ="Where you able to maneuver gracefully?";
+				q2.innerHTML ="Was the bathroom easy to use?";
+				q3.innerHTML ="Did you have special tables?";
+				q4.innerHTML ="Are there ramps? ";				
+			}
+			else if (element.id == 'beach'){
+				document.getElementById('dropdownMenu1').innerHTML = 'Beaches';
+				
+				q1.innerHTML ="Were you able to get on the beach? ";
+				q2.innerHTML ="Was the bathroom easy to use? ";
+				q3.innerHTML ="Are there any shaded areas? ";
+				q4.innerHTML ="Are there ramps? ";
+				}
+			else if (element.id == 'resturaunt'){
+				document.getElementById('dropdownMenu1').innerHTML = 'Restaurant';
+				
+				q1.innerHTML ="Where you able to maneuver gracefully?";
+				q2.innerHTML ="Was the bathroom easy to use?";
+				q3.innerHTML ="Did you have special tables?  ";
+				q4.innerHTML ="Are there ramps? ";
+			}
+			else if (element.id == 'church'){
+				document.getElementById('dropdownMenu1').innerHTML = 'Churches';
+				
+				q1.innerHTML ="Where you able to maneuver gracefully?";
+				q2.innerHTML ="Was the bathroom easy to use?";
+				q3.innerHTML ="Was there space or space made for you? ";
+				q4.innerHTML ="Are there ramps? ";
+			}
+			else if (element.id == 'uni'){
+				document.getElementById('dropdownMenu1').innerHTML = 'Schools/University';
+			
+				q1.innerHTML ="Are there ramps?";
+				q2.innerHTML ="Where the doors to the classrooms wide enough? ";
+				q3.innerHTML ="Was there place made in the front for you?";
+				q4.innerHTML ="Are the boards easy to see?";	
+			}
+			
+		  
+		}
+		
+	</script>
+
 
 
 	<!-- jQuery -->

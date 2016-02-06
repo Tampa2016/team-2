@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 @font-face {
   font-family: 'icomoon';
   src: url("../fonts/icomoon/icomoon.eot?srf3rx");
@@ -16,6 +17,10 @@ html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+}
+#question1{
+text-align: center;
+font-size: 24px;
 }
 
 body {
