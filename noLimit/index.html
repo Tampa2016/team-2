@@ -103,9 +103,7 @@ html {
                             </form>     
 
 
-                            <div>
-                              <button type="button" onclick="addRow()">TEST SIGN IN</button>
-                            </div>
+                           
 
                         </div>                     
                     </div>  
@@ -121,15 +119,6 @@ html {
 
 <script type="text/javascript">
 Parse.initialize("tzlgN4Z1aZh65b5t0EXJ6WbWAZY2iZ2V5UzC3Exy", "CSB7qB9VeyvjiPwH1TZxtgOLXzIW8Asj6YkQO7VU");
-</script>
-<script type="text/javascript">
-  function addRow() {
-    var TestObject = Parse.Object.extend("TestObject");
-    var testObject = new TestObject();
-    testObject.save({foo: "bar"}).then(function(object) {
-    alert("yay! it worked");
-  });
-  }
 </script>
 </body>
 </html>
