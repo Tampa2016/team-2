@@ -66,7 +66,7 @@ html {
                                     
                             <div style="margin-bottom: 25px" class="input-group">
                               <span class="input-group-addon">Username</span>
-                              <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username or email">                                        
+                              <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="enter email">                                        
                             </div>
                                 
                             <div style="margin-bottom: 25px" class="input-group">
@@ -155,17 +155,30 @@ html {
 Parse.initialize("tzlgN4Z1aZh65b5t0EXJ6WbWAZY2iZ2V5UzC3Exy", "CSB7qB9VeyvjiPwH1TZxtgOLXzIW8Asj6YkQO7VU");
 </script>
 <script type="text/javascript">
-  function registerNewPerson(newEmail,newPass) {
-    var registeredObject = Parse.Object.extend("Registered"); // creates Registered
-    var registerObject = new registeredObject();
+  function registerNewPerson() {
+    event.preventDefault();
+    var usersObject = Parse.Object.extend("Users"); // creates Registered
+    var user = new usersObject();
+
     var newName = $('#usrname').val();
     var newEmail = $('#usremail').val();
     var newPass = $('#usrpwd').val();
 //    alert(newName);
-    registerObject.save({Name: newName, Email: newEmail, Pass: newPass}).then(function(object) {
-    alert("Welcome! Thank you for registering!");
+
+    user.save({Name: newName, Email: newEmail, Pass: newPass}).then(function(object) {
+   alert("Welcome! Thank you for registering!");
   });
   }
+
+//    $("#loginform").submit(function(event) {
+  //  event.preventDefault();
+//
+ //   var name = $("#login-username").val();
+  //  var pass = $("#login-password").val();
+
+ //   Parse.
+
+//  });
 </script>
 </body>
 </html>
