@@ -61,8 +61,9 @@
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
-	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAoOa8Fx8wnAjXLlgNNrIeTq8HHm6JauQo
- Done&libraries=places"></script>
+
+	<!--Google Script to take user location!-->
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAoOa8Fx8wnAjXLlgNNrIeTq8HHm6JauQoDone&libraries=places"></script>
 		<script type="text/javascript">
 			window.onload = function() {
 			//	document.addEventListener("deviceready", init, false);
@@ -70,10 +71,12 @@
 
 			}
 
+			// Get the current location of the user
 			function init() {
 				navigator.geolocation.getCurrentPosition(positionSuccess, positionError);
 			}
 
+			// Function to call on success of the geolocation request
 			function positionSuccess(position) {
 				var latitude = position.coords.latitude;
 				var longitude = position.coords.longitude;
@@ -82,6 +85,7 @@
 
 				document.getElementById("g_map").setAttribute("src", "https://maps.google.co.uk?q=" + coordinates + "&z=18&output=embed");
 			}
+			// Function to call on fail of the geolocation request
 			function positionError(error) {
 				alert(error.message);
 			}
@@ -89,9 +93,11 @@
 	</head>
 	<body>
 		
-		<div id="fh5co-offcanvass">
+		<div id="fh5co-offcanvass"><!--Handles the sidebar profile!-->
 			<a href="#" class="fh5co-offcanvass-close js-fh5co-offcanvass-close">Menu <i class="icon-cross"></i> </a>
 			<h1 class="fh5co-logo"><a class="navbar-brand" href="index.html">Insert Name Here</a></h1>
+			
+			<!-- Top Navagation Bar -->
 			<ul>
 				<li class="active"><a href="profile.html">View Profile</a></li>
 				<li><a href="profile.html">Rank: Secretary of Helpfulness</a></li>
@@ -106,8 +112,9 @@
 				<a href="#"><i class="icon-dribbble"></i></a>
 				<a href="#"><i class="icon-youtube"></i></a>
 			</p>
-		</div>
+		</div><!--ends side profile!-->
 	
+		<!-- NavBar menu -->
 		<div id="header-wrap">
 			<nav class="fh5co-fixed-top">
 				<div class="container">
@@ -126,6 +133,7 @@
 		</div>
 	<!-- END .header -->
 
+					<!-- Hangouts map -->
 					<div id="map" class="col-md-12">
 						<iframe id="g_map" width="100%" height="100%" frameborder="0" scrolling"no" marginheight="0" src="https://maps.google.co.uk?output=embed" allowfullscreen></iframe>
 					</div>

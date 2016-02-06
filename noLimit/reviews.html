@@ -65,7 +65,7 @@
 	</head>
 	<body>
 		
-	<div id="fh5co-offcanvass">
+	<div id="fh5co-offcanvass"><!--Handles the sidebar profile!-->
 		<a href="#" class="fh5co-offcanvass-close js-fh5co-offcanvass-close">Menu <i class="icon-cross"></i> </a>
 		<h1 class="fh5co-logo"><a class="navbar-brand" href="index.html">Insert Name Here</a></h1>
 			<ul>
@@ -82,9 +82,9 @@
 			<a href="#"><i class="icon-dribbble"></i></a>
 			<a href="#"><i class="icon-youtube"></i></a>
 		</p>
-	</div>
+	</div><!--ends side profile!-->
 	
-<div id="header-wrap">
+<div id="header-wrap"><!--Starts the navbar-->
 <nav class="fh5co-fixed-top">
 	<div class="container">
 			<div class="row">
@@ -98,17 +98,17 @@
 			</div>
 		</div>
 </nav>
-</div>
+</div><!--ends navbar-->
 	<!-- END .header -->
 
-	<div class="container">
+	<div class="container"><!--Container for dropdown menu-->
 	  <h2>Post a Review</h2>
 	  
 	  <!-- REVIEW QUESTIONS -->
 	  <dl id="questions">
 		<dt> 
 					<div class="dropdown">
-					  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+					  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><!--Handles the dropdow Menu-->
 						Type of Location
 						<span class="caret"></span>
 					  </button>
@@ -122,7 +122,7 @@
 						<li role="separator" class="divider"></li>
 					  </ul>
 					</div>
-
+<!--  -->
 		  </dt>
 		<dt class="question">
 			<span id="q1">Are the elevators functional/ easy to get to?</span>
@@ -172,20 +172,43 @@
 				</label>
 			  </form>
 		</dt>
+
+		
+		<!-- This is a extra comment box -->
 	  </dl>
 		<div class="form-group">
 			<label for="inputlg">Extra Comments</label>
 				<input class="form-control input-lg" id="inputlg" type="text">
-				<input type="submit"> 
 				</input>
 		</div>
+		<!-- This is a button to upload photos along with the review-->
+		<div class="col-lg-6 col-sm-6 col-12">
+            <h4>Import A Photo</h4>
+            <div class="input-group">
+                <span class="input-group-btn">
+                    <span class="btn btn-primary btn-file">
+                        Browse&hellip; <input type="file" multiple>
+                    </span>
+                </span>
+                <input type="text" class="form-control" readonly>
+            </div>
+            <span class="help-block">
+            </span>
+        </di><!--ends the upload handler-->
+		
+		<button type="button" class="btn btn-primary btn-block">Submit</button>
+		
 	</div>
 			
 
 	</div>
 	</div>
-
+<!--Javascript to handle reviews!-->
 	<script>
+		function submitAlert() {
+			alert("Your Review has been submitted");
+			window.location = "mainfeed.html";
+		}
 		function changeTextH(element){
 			var q1 =document.getElementById("q1");
 			var q2 =document.getElementById("q2");
@@ -246,7 +269,7 @@
 		}
 		
 	</script>
-
+<!--end of script-->
 
 
 	<!-- jQuery -->
