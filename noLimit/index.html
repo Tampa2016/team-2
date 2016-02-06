@@ -156,29 +156,58 @@ Parse.initialize("tzlgN4Z1aZh65b5t0EXJ6WbWAZY2iZ2V5UzC3Exy", "CSB7qB9VeyvjiPwH1T
 </script>
 <script type="text/javascript">
   function registerNewPerson() {
+    var currentUser = Parse.User.current();
+                if (currentUser) {
+                    // do stuff with the user
+                    Parse.User.logOut();
+                } 
     event.preventDefault();
-    var usersObject = Parse.Object.extend("Users"); // creates Registered
+/*   var usersObject = Parse.Object.extend("Users"); // creates Registered
     var user = new usersObject();
+*/
+  var user = new Parse.User();
 
     var newName = $('#usrname').val();
     var newEmail = $('#usremail').val();
     var newPass = $('#usrpwd').val();
-//    alert(newName);
-
+    console.log(newName);
+/*
     user.save({Name: newName, Email: newEmail, Pass: newPass}).then(function(object) {
-   alert("Welcome! Thank you for registering!");
-  });
+        alert("Welcome! Thank you for registering!");
+    });
+ */
+// var user = new Parse.User();
+user.set("username", newName);
+user.set("password", newPass);
+user.set("email", newEmail);
+user.signUp(null, {
+  success: function(user) {
+    // Hooray! Let them use the app now.
+    alert("Thank you for registering! Please use your new credentials to log in.");
+  },
+  error: function(user, error) {
+    // Show the error message somewhere and let the user try again.
+    alert("Error: " + error.code + " " + error.message);
+  }
+});
+
   }
 
-//    $("#loginform").submit(function(event) {
-  //  event.preventDefault();
-//
- //   var name = $("#login-username").val();
-  //  var pass = $("#login-password").val();
+    $("#loginform").submit(function(event) {
+      event.preventDefault();
 
- //   Parse.
+      var name = $("#login-username").val();
+      var pass = $("#login-password").val();
 
-//  });
+       Parse.User.logIn(name, pass, {success: function() {
+          console.log("Log in Success!");
+       }, error: function() {
+          console.log("Log in Error: "+error.message);
+       }
+     });
+
+  });
+ 
 </script>
 </body>
 </html>
